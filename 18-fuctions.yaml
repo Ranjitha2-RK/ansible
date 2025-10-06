@@ -74,5 +74,16 @@
     ansible.builtin.debug:
       msg: "{{ command_output }}"
 
+  # redirect the output
+  - name: redirect the output
+    ansible.builtin.command: ls -ltr > /tmp/output.txt
+    register: redirect_output
+    ignore_errors: true
+
+  - name: print redirect_output
+    ansible.builtin.debug:
+      msg: "{{ redirect_output }}"
+
+
 # Functions: Taking i/p and providing the o/p, execute whenver we call
 # functions == filter, We can write fuctions but we need to write python code, we can use default in built functions from ansible

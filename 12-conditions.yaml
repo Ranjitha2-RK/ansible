@@ -11,3 +11,5 @@
     
 
 # number is 12, when number < 10, it showing as skipping the host
+# ansible-playbook -i inventory.ini -e ansible_user=ec2-user ansible_password=DevOps321 12-condition.yaml
+# facts is ntg but variables

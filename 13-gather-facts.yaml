@@ -1,0 +1,11 @@
+- name: gather facts
+  hosts: local
+  connection: local
+  # ansible collects info of target server, before it executes any other
+  tasks:
+  - name: facts
+    ansible.builtin.debug:
+      msg: "{{ ansible_facts }}"
+    
+
+# facts is ntg but variables

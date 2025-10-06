@@ -3,6 +3,7 @@
   connection: local
   vars:
     technologies: DevOps, Linux, Shell, Ansible # String
+    name: "Sivakumar reddy M"
     # dictionry == map
     tags:
       Application: payment
@@ -31,7 +32,7 @@
     ansible.builtin.debug:
       msg: "tag map: {{ listTags | items2dict }}"
   
-  # to read yaml file
+  # to read yaml file to json
   - name: read yaml and take it into variable
     ansible.builtin.set_fact:
       student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
@@ -44,6 +45,11 @@
     ansible.builtin.copy:
       dest: ./stundent-data.json
       content: "{{ student_yaml | to_nice_json  }}"
+  
+  # convert uppercase
+  - name: convert uppercase
+    ansible.builtin.debug:
+      msg: "{{ name | upper }}"
 
 
 # Functions: Taking i/p and providing the o/p, execute whenver we call

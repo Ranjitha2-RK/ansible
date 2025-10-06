@@ -26,10 +26,15 @@
   - name: convert map to list
     ansible.builtin.debug:
       msg: "Tags are: {{ tags | dict2items }}"
-      
+
   - name: convert list into map
     ansible.builtin.debug:
       msg: "tag map: {{ listTags | items2dict }}"
+  
+  # to read yaml file
+  - name: read yaml and take it into variable
+    ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml') | from_yaml }}"
 
 # Functions: Taking i/p and providing the o/p, execute whenver we call
 # functions == filter, We can write fuctions but we need to write python code, we can use default in built functions from ansible

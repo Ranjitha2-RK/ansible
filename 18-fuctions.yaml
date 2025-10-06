@@ -9,8 +9,8 @@
       msg: "Hello, {{ name | default('Ramesh') }}"
 
 # Strings to list
-- name: convert string to list
-  ansible.builtin.debug:
-    msg: "Technologies are: {{ technologies | split(',') }}"
+  - name: convert string to list
+    ansible.builtin.debug:
+     msg: "Technologies are: {{ technologies | split(',') }}"
 # Functions: Taking i/p and providing the o/p, execute whenver we call
 # functions == filter, We can write fuctions but we need to write python code, we can use default in built functions from ansible

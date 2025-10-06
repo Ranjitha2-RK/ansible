@@ -4,6 +4,7 @@
   vars:
     technologies: DevOps, Linux, Shell, Ansible # String
     name: "Sivakumar reddy M"
+    gmail: Info@GMAIL.COM
     # dictionry == map
     tags:
       Application: payment
@@ -50,6 +51,11 @@
   - name: convert uppercase
     ansible.builtin.debug:
       msg: "{{ name | upper }}"
+  
+  # convert to lowercase
+  - name: convert lowercase
+    ansible.builtin.debug:
+      msg: "{{ gmail | lower }}"
 
 
 # Functions: Taking i/p and providing the o/p, execute whenver we call
